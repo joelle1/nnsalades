@@ -3,81 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>N&N Salades</title>
+
+<title>NN Salades</title>
+
 <style>
 body {
     font-family: Arial, sans-serif;
-    background: #f3fff3;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    background:#f5fff5;
+    padding:20px;
 }
 
-.header {
-    background: #1b5e20;
-    color: white;
-    padding: 20px;
+.logo {
+    width:150px;
 }
 
 h1 {
-    margin: 0;
+    color:#1b7d2b;
 }
 
-.subtitle {
-    font-size: 14px;
-    opacity: 0.9;
+button {
+    width:90%;
+    max-width:350px;
+    padding:15px;
+    margin:10px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    background:#1b7d2b;
+    color:white;
+    cursor:pointer;
 }
 
-.container {
-    padding: 20px;
+button:hover {
+    opacity:0.8;
 }
 
-.btn {
-    display: block;
-    margin: 12px auto;
-    padding: 15px;
-    width: 80%;
-    max-width: 300px;
-    background: #4caf50;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 16px;
-}
-
-.btn:hover {
-    background: #388e3c;
+.info {
+    margin-top:20px;
+    color:#555;
 }
 </style>
+
 </head>
+
 <body>
 
-<div class="header">
-    <h1>🥗 N&N Salades</h1>
-    <div class="subtitle">Préparé avec passion pour votre bien-être</div>
+<h1>N&N Salades</h1>
+
+<p>Fraîcheur • Équilibre • Énergie</p>
+
+<h3>🥗 Commandez directement</h3>
+
+
+<button onclick="commande('une salade')">
+🥗 Commander une salade
+</button>
+
+
+<button onclick="commande('un jus naturel')">
+🥤 Commander un jus
+</button>
+
+
+<button onclick="commande('un gâteau')">
+🍩 Commander un gâteau
+</button>
+
+
+<button onclick="commande('une commande complète')">
+🍱 Commander un menu complet
+</button>
+
+
+<div class="info">
+Préparé avec passion pour votre bien-être ❤️
 </div>
 
-<div class="container">
+<script>
 
-    <a class="btn" href="https://wa.me/237695074819?text=Bonjour%20je%20veux%20commander%20une%20salade">
-    🥗 Commander une salade
-    </a>
+function commande(produit){
+let numero="23795074819"; 
 
-    <a class="btn" href="https://wa.me/237695074819?text=Bonjour%20je%20veux%20commander%20un%20jus">
-    🥤 Commander un jus
-    </a>
+    let message =
+    "Bonjour N&N Salades 👋%0A"+
+    "Je souhaite commander : "+produit;
 
-    <a class="btn" href="https://wa.me/237695074819?text=Bonjour%20je%20veux%20commander%20un%20gateau">
-    🍩 Commander des gâteaux
-    </a>
+    let url =
+    "https://wa.me/"+numero+"?text="+message;
 
-    <a class="btn" href="https://maps.google.com">
-    📍 Voir notre localisation
-    </a>
+    window.location.href=url;
+}
 
-    <a class="btn" href="https://wa.me/237695074819">
-    📞 Nous contacter
-    </a>
-</div>
+</script>
+
 </body>
 </html>
