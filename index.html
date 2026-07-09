@@ -83,16 +83,17 @@ Préparé avec passion pour votre bien-être ❤️
 <script>
 
 function commande(produit){
-let numero="23795074819"; 
 
-    let message =
-    "Bonjour N&N Salades 👋%0A"+
+    let numero = "23795074819"; 
+
+    let message = 
+    "Bonjour N&N Salades 👋\n"+
     "Je souhaite commander : "+produit;
 
     let url =
-    "https://wa.me/"+numero+"?text="+message;
+    "https://wa.me/"+numero+"?text="+encodeURIComponent(message);
 
-    window.location.href=url;
+    window.location.href = url;
 }
 
 </script>
